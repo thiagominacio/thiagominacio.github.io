@@ -367,3 +367,55 @@ footer { background:var(--bg); color:#c7d0de; padding:28px 0; }
   .atelie-diagram-stack{padding:17px;}
   .atelie-diagram-heading{align-items:flex-start;flex-direction:column;}
 }
+
+
+/* V5: Case Gestão de Garantias */
+.warranty-hero { background: radial-gradient(circle at 92% 5%,rgba(20,184,166,.20),transparent 35%),linear-gradient(135deg,#0b1120,#111d32); }
+.warranty-hero-note { max-width:790px;margin-top:26px;padding:18px 22px;border-radius:12px;background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.14); }
+.warranty-hero-note strong { font-size:.95rem; color:#b6f1e7; }
+.warranty-hero-note p { margin:6px 0 0;color:#dce9f1;font-size:.93rem; }
+.warranty-section-label { margin-top:42px; }
+.warranty-facts { display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:22px 0 15px; }
+.warranty-fact { display:flex;align-items:flex-start;gap:12px;padding:18px;border:1px solid #cde5dc;background:#f1faf6;border-radius:14px; }
+.warranty-fact.planned { background:#f7f8fc;border-color:#dae0ee; }
+.warranty-fact-symbol { display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:999px;width:29px;height:29px;background:#daf5e9;color:#11634e;font-weight:900; }
+.warranty-fact.planned .warranty-fact-symbol { background:#e6eaf6;color:#4c5c7a; }
+.warranty-fact strong { font-size:.96rem; }
+.warranty-fact p { font-size:.86rem;margin:6px 0 0; }
+.warranty-disclaimer { font-size:.85rem !important;color:#617083 !important; }
+.warranty-flow { margin:24px 0 35px;border:1px solid #dbe3ed;border-radius:18px;background:#f9fbff;overflow:hidden; }
+.warranty-flow-heading { display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;color:#9fd8fe;background:#121d32; }
+.warranty-flow-heading span {font-size:.8rem;letter-spacing:.07em;font-weight:800;}
+.warranty-flow-heading small {font-size:.75rem;color:#c4d0dd;}
+.warranty-flow-grid { display:flex;align-items:stretch;gap:8px;padding:24px 16px; }
+.warranty-flow-step { flex:1;min-width:0;border:1px solid #dce4ef;padding:16px 12px;border-radius:12px;background:white;display:flex;flex-direction:column;gap:8px; }
+.warranty-step-num {font-size:.74rem;font-weight:800;color:#2563eb;}
+.warranty-flow-step strong {font-size:.92rem;}
+.warranty-flow-step small {font-size:.76rem;line-height:1.45;color:#64748b;}
+.warranty-flow-arrow {align-self:center;color:#2563eb;font-size:1.2rem;font-weight:800;}
+.warranty-data-line { border-top:1px solid #dae2ed;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:17px 20px;background:#edf4ff; }
+.warranty-data-line span:first-child { color:#44618c;font-size:.71rem;font-weight:800;letter-spacing:.08em; }
+.warranty-data-line strong { font-size:.9rem;color:#173965; }
+.warranty-data-line span:last-child { font-size:.8rem;color:#54667d; }
+.warranty-tech-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0 30px;}
+.warranty-tech-grid > div { display:flex;flex-direction:column;gap:8px;border:1px solid #dbe3ed;border-radius:12px;padding:18px; }
+.warranty-tech-grid b {font-size:.9rem;color:#192b44;}
+.warranty-tech-grid span {font-size:.86rem;color:#617084;}
+.warranty-roadmap {border:1px solid #dbe3ed;border-radius:16px;padding:12px 22px;margin:24px 0 30px;}
+.warranty-roadmap > div {display:flex;gap:16px;padding:18px 0;}
+.warranty-roadmap > div + div {border-top:1px solid #e7ebf2;}
+.warranty-roadmap > div > span {width:28px;height:28px;flex:none;border-radius:9px;background:#eaf1ff;color:#1d4ed8;display:flex;justify-content:center;align-items:center;font-size:.87rem;font-weight:800;}
+.warranty-roadmap strong {font-size:.98rem;}
+.warranty-roadmap p {margin:5px 0 0;font-size:.91rem;}
+.warranty-privacy {background:#f5f8fc;border:1px solid #d9e3ef;border-radius:12px;padding:22px;margin:30px 0;}
+.warranty-privacy strong {color:#1f3555;}
+.warranty-privacy p {font-size:.9rem;margin:8px 0 0;}
+.warranty-aside-label {font-size:.7rem;font-weight:800;color:#246d73;letter-spacing:.07em;}
+.warranty-aside-foot {border-top:1px solid #e5eaf2;padding-top:18px;margin-top:25px;}
+.warranty-aside-foot p {font-size:.85rem;margin:7px 0 0;}
+@media(max-width:750px) {
+ .warranty-facts,.warranty-tech-grid {grid-template-columns:1fr;}
+ .warranty-flow-grid { flex-direction:column; }
+ .warranty-flow-arrow { transform:rotate(90deg); }
+ .warranty-flow-heading {align-items:flex-start;flex-direction:column;}
+}

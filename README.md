@@ -19,6 +19,13 @@ https://thiagominacio.github.io
 - `style.css` — estilos visuais
 - `script.js` — filtros dos projetos e pequenos comportamentos
 
+## Cases individuais
+
+- [Baozi Store API](projetos/baozi-store.html)
+- [Banco de Dados e SQL](projetos/banco-dados-sql.html)
+- [Ateliê Financeiro](projetos/atelie-financeiro.html)
+- [Sistema de Gestão de Garantias](projetos/gestao-garantias.html)
+
 ## Próximas melhorias
 
 - Página individual da Baozi Store API criada
