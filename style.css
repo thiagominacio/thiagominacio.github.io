@@ -310,3 +310,60 @@ footer { background:var(--bg); color:#c7d0de; padding:28px 0; }
   .sql-info-grid{grid-template-columns:1fr;}
   .sql-code{font-size:.76rem;padding:14px;}
 }
+
+/* Case: Ateliê Financeiro | V4 */
+.atelie-hero {
+  background: radial-gradient(circle at 85% 0, rgba(32,186,150,.16), transparent 36%),
+    radial-gradient(circle at 5% 70%, rgba(37,99,235,.20), transparent 32%),
+    linear-gradient(135deg,#0b1120 0%,#111c30 100%);
+}
+.atelie-hero h1 {font-size: clamp(2.7rem,6vw,4.9rem);}
+.atelie-hero-note {border-left:3px solid #5eead4;background:rgba(255,255,255,.055);padding:15px 19px;border-radius:0 12px 12px 0;max-width:760px;margin-top:30px;}
+.atelie-hero-note strong{font-size:.86rem;color:#b7f7e8;text-transform:uppercase;letter-spacing:.09em;}
+.atelie-hero-note p{color:#dbeafe;margin:6px 0 0;font-size:.94rem;}
+.atelie-next-label{margin-top:55px;display:block;}
+.atelie-module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0 14px;}
+.atelie-module{padding:22px 20px;border:1px solid #dce5ee;border-radius:15px;background:#fbfdff;}
+.atelie-module-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#e1f5f0;color:#0b7666;font-weight:800;margin-bottom:12px;}
+.atelie-module h3{font-size:1.02rem;margin:0 0 8px;}
+.atelie-module p{font-size:.87rem;margin:0;}
+.atelie-disclaimer {font-size:.82rem!important;color:#7b8797!important;font-style:italic;margin-top:14px;}
+.atelie-diagram{border-radius:17px;border:1px solid #cad8e8;background:#f6f9ff;overflow:hidden;margin:23px 0 36px;}
+.atelie-diagram-heading{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;align-items:center;background:#111c30;padding:14px 19px;color:white;}
+.atelie-diagram-heading span{font-size:.79rem;letter-spacing:.09em;font-weight:800;}
+.atelie-diagram-heading small{font-size:.73rem;color:#c4d4e7;}
+.atelie-diagram-stack{padding:22px 24px;}
+.atelie-diagram-node{border-radius:12px;background:white;border:1px solid #ccd8e7;display:flex;flex-direction:column;align-items:center;gap:4px;padding:17px 14px;text-align:center;box-shadow:0 4px 10px rgba(15,23,42,.025);}
+.atelie-diagram-node strong{color:#0f172a;font-size:.96rem;}
+.atelie-diagram-node>span:last-child{color:#64748b;font-size:.8rem;}
+.atelie-diagram-overline{font-size:.69rem;font-weight:800;letter-spacing:.09em;color:#2563eb;}
+.atelie-diagram-arrow{text-align:center;font-size:23px;line-height:1.4;color:#8293aa;}
+.atelie-rules{border-color:#c5d9f8;}
+.atelie-db{border-color:#bce5da;background:#f5fffc;}
+.atelie-diagram-sources{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px;}
+.atelie-diagram-sources>div{border:1px dashed #bdc9d9;border-radius:10px;padding:13px 10px;background:#fff;display:flex;flex-direction:column;gap:3px;}
+.atelie-diagram-sources b{font-size:.77rem;color:#334155;}
+.atelie-diagram-sources span{font-size:.70rem;color:#64748b;line-height:1.4;}
+.atelie-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0;}
+.atelie-status-card{padding:20px;border:1px solid #dbe2ea;border-radius:15px;background:white;}
+.atelie-status-card.done{border-top:4px solid #0d9488;}
+.atelie-status-card.pending{border-top:4px solid #f59e0b;}
+.atelie-status-heading{color:#0f172a;font-size:.93rem;font-weight:800;display:flex;align-items:center;gap:8px;}
+.atelie-status-card.done .atelie-status-heading span{color:#0d9488;}
+.atelie-status-card.pending .atelie-status-heading span{color:#b45309;}
+.atelie-status-card ul{margin-bottom:0;margin-top:12px;padding-left:18px;}
+.atelie-status-card li{font-size:.85rem;margin-bottom:8px;}
+.atelie-honesty{border:1px solid #bfdbfe;border-radius:12px;background:#eff6ff;color:#334155;padding:18px 20px;font-size:.9rem;}
+.atelie-honesty strong{color:#1e40af;}
+.atelie-lessons{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 34px;}
+.atelie-lessons span{font-size:.8rem;font-weight:700;padding:8px 11px;color:#0f6a61;background:#e9f8f4;border:1px solid #bfede3;border-radius:999px;}
+.atelie-aside-label{display:block;color:#0d9488;font-size:.69rem;letter-spacing:.1em;font-weight:800;margin-bottom:10px;}
+.atelie-aside-footer{margin-top:22px;background:#f8fafc;border-radius:12px;padding:15px;border:1px solid #dbe2ea;}
+.atelie-aside-footer strong{font-size:.88rem;color:#0f172a;}
+.atelie-aside-footer p{font-size:.81rem;margin:8px 0 0;}
+@media(max-width:740px){
+  .atelie-module-grid,.atelie-status-grid{grid-template-columns:1fr;}
+  .atelie-diagram-sources{grid-template-columns:1fr;}
+  .atelie-diagram-stack{padding:17px;}
+  .atelie-diagram-heading{align-items:flex-start;flex-direction:column;}
+}

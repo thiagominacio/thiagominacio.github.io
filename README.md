@@ -23,9 +23,14 @@ https://thiagominacio.github.io
 
 - Página individual da Baozi Store API criada
 - Página individual do case de Banco de Dados e SQL criada
-- Adicionar páginas individuais para os demais projetos
+- Página individual do Ateliê Financeiro criada (projeto pessoal em desenvolvimento)
+- Adicionar páginas individuais para Garantias, Estoque, Power Platform e demais projetos
 - Inserir screenshots e demonstrações
 - Adicionar currículo para download
 - Melhorar seção de experiências
 - Criar seção de certificações
 - Adicionar projetos Power Platform e dashboards
+
+## Transparência dos cases
+
+O Ateliê Financeiro é descrito como um projeto pessoal em desenvolvimento. Integrações externas ainda em validação não são declaradas concluídas. Nenhum dado real ou segredo de configuração é publicado no portfólio.
