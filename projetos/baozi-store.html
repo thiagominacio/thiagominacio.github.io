@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case da Baozi Store API, projeto acadêmico de Thiago Moura Inácio desenvolvido em Java com Spring Boot." />
+  <title>Baozi Store API | Thiago Moura Inácio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Thiago Moura Inácio</a>
+      <nav>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="../index.html#atuacao">Atuação</a>
+        <a href="../index.html#projetos">Projetos</a>
+        <a href="../index.html#tecnologias">Tecnologias</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="container">
+        <a class="case-breadcrumb" href="../index.html#projetos">← Voltar para projetos</a>
+        <span class="eyebrow">PROJETO ACADÊMICO · BACK-END</span>
+        <h1>Baozi Store API</h1>
+        <p class="case-subtitle">
+          API REST para gerenciamento de clientes, produtos e pedidos, desenvolvida em Java
+          com Spring Boot, persistência de dados e testes dos endpoints com Postman.
+        </p>
+        <div class="case-meta">
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>Spring Data JPA</span>
+          <span>H2 Database</span>
+          <span>Maven</span>
+          <span>Postman</span>
+          <span>Git/GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-grid">
+        <article class="case-content">
+          <span class="eyebrow">VISÃO GERAL</span>
+          <h2>Do cenário de negócio à API funcional.</h2>
+          <p>
+            O projeto simula uma pequena loja de baozi que precisa organizar clientes,
+            produtos e pedidos. A solução desenvolvida foi uma API REST capaz de cadastrar,
+            listar, consultar por identificador e excluir registros dessas três entidades.
+          </p>
+
+          <div class="case-callout">
+            <strong>Objetivo do projeto:</strong> aplicar na prática conceitos de desenvolvimento
+            web back-end, APIs REST, persistência relacional, organização em camadas e testes
+            funcionais de endpoints.
+          </div>
+
+          <h3>Minha atuação</h3>
+          <ul>
+            <li>Modelagem das entidades Cliente, Produto e Pedido.</li>
+            <li>Estruturação do projeto em camadas com model, repository e controller.</li>
+            <li>Implementação de endpoints HTTP para as operações previstas no trabalho.</li>
+            <li>Persistência dos dados utilizando Spring Data JPA e banco H2.</li>
+            <li>Envio e recebimento de dados em formato JSON.</li>
+            <li>Execução de testes funcionais com Postman.</li>
+            <li>Versionamento e publicação do código-fonte no GitHub.</li>
+          </ul>
+
+          <img class="case-image" src="../assets/baozi-caso-uso.png" alt="Diagrama de caso de uso da Baozi Store API">
+          <p class="case-caption">Diagrama de caso de uso desenvolvido para representar as operações disponíveis para Cliente, Produto e Pedido.</p>
+
+          <h3>Arquitetura e tecnologias</h3>
+          <p>
+            A aplicação foi desenvolvida em Java utilizando Spring Boot e Spring Data JPA.
+            A persistência foi realizada em banco relacional H2, e o gerenciamento das
+            dependências foi feito com Maven. Os testes dos endpoints foram executados com Postman.
+          </p>
+
+          <h3>Endpoints implementados</h3>
+          <table class="endpoint-table">
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Endpoint</th>
+                <th>Função</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>POST</td><td>/clientes</td><td>Cadastrar cliente</td></tr>
+              <tr><td>GET</td><td>/clientes</td><td>Listar clientes</td></tr>
+              <tr><td>GET</td><td>/clientes/{id}</td><td>Consultar cliente por ID</td></tr>
+              <tr><td>DELETE</td><td>/clientes/{id}</td><td>Excluir cliente</td></tr>
+              <tr><td>POST</td><td>/produtos</td><td>Cadastrar produto</td></tr>
+              <tr><td>GET</td><td>/produtos</td><td>Listar produtos</td></tr>
+              <tr><td>GET</td><td>/produtos/{id}</td><td>Consultar produto por ID</td></tr>
+              <tr><td>DELETE</td><td>/produtos/{id}</td><td>Excluir produto</td></tr>
+              <tr><td>POST</td><td>/pedidos</td><td>Registrar pedido</td></tr>
+              <tr><td>GET</td><td>/pedidos</td><td>Listar pedidos</td></tr>
+              <tr><td>GET</td><td>/pedidos/{id}</td><td>Consultar pedido por ID</td></tr>
+              <tr><td>DELETE</td><td>/pedidos/{id}</td><td>Excluir pedido</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Testes funcionais</h3>
+          <p>
+            As funcionalidades foram validadas em ambiente local por meio de requisições HTTP
+            no Postman. Os testes incluíram cadastro, listagem, consulta por identificador e exclusão.
+          </p>
+
+          <img class="case-image" src="../assets/baozi-postman-post.png" alt="Teste POST da Baozi Store API no Postman">
+          <p class="case-caption">Exemplo de teste de cadastro utilizando requisição POST no Postman.</p>
+
+          <img class="case-image" src="../assets/baozi-postman-get.png" alt="Teste GET da Baozi Store API no Postman">
+          <p class="case-caption">Exemplo de teste de listagem utilizando requisição GET no Postman.</p>
+
+          <h3>O que este projeto demonstra</h3>
+          <ul>
+            <li>Fundamentos de desenvolvimento back-end com Java.</li>
+            <li>Construção e consumo conceitual de APIs REST.</li>
+            <li>Organização de responsabilidades em uma aplicação Spring.</li>
+            <li>Persistência de dados com JPA.</li>
+            <li>Uso prático de métodos HTTP e JSON.</li>
+            <li>Testes de endpoints com ferramenta dedicada.</li>
+            <li>Uso de Git e GitHub no fluxo de desenvolvimento.</li>
+          </ul>
+
+          <h3>Próximos passos de evolução</h3>
+          <p>
+            Como evolução do projeto, pretendo implementar atualização de registros com PUT/PATCH,
+            tratamento padronizado de erros, validação dos dados de entrada, relacionamentos mais
+            completos entre as entidades e testes automatizados.
+          </p>
+
+          <div class="case-actions">
+            <a class="btn primary" href="https://github.com/thiagominacio/baozi-store-api" target="_blank" rel="noreferrer">Ver código no GitHub</a>
+            <a class="btn secondary" href="../index.html#projetos">Voltar aos projetos</a>
+          </div>
+        </article>
+
+        <aside class="case-sidebar">
+          <h3>Resumo do projeto</h3>
+          <dl>
+            <dt>Tipo</dt>
+            <dd>Projeto acadêmico</dd>
+
+            <dt>Status</dt>
+            <dd>Concluído</dd>
+
+            <dt>Área</dt>
+            <dd>Desenvolvimento Back-end</dd>
+
+            <dt>Linguagem</dt>
+            <dd>Java</dd>
+
+            <dt>Framework</dt>
+            <dd>Spring Boot</dd>
+
+            <dt>Persistência</dt>
+            <dd>Spring Data JPA + H2</dd>
+
+            <dt>Testes</dt>
+            <dd>Postman</dd>
+
+            <dt>Versionamento</dt>
+            <dd>Git e GitHub</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>© <span id="year"></span> Thiago Moura Inácio</span>
+      <span>Projeto acadêmico · Baozi Store API</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -21,7 +21,8 @@ https://thiagominacio.github.io
 
 ## Próximas melhorias
 
-- Adicionar páginas individuais para os principais projetos
+- Página individual da Baozi Store API criada
+- Adicionar páginas individuais para os demais projetos
 - Inserir screenshots e demonstrações
 - Adicionar currículo para download
 - Melhorar seção de experiências
