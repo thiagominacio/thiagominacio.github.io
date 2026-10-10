@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case de sistema de controle de estoque em Next.js, TypeScript, PostgreSQL e Prisma: modelagem relacional e primeiros testes de API." />
+  <title>Controle de Estoque | Thiago Moura Inácio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar"><div class="container nav">
+    <a class="brand" href="../index.html">Thiago Moura Inácio</a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html#sobre">Sobre</a>
+      <a href="../index.html#atuacao">Atuação</a>
+      <a href="../index.html#projetos">Projetos</a>
+      <a href="../index.html#tecnologias">Tecnologias</a>
+      <a href="../index.html#contato">Contato</a>
+    </nav>
+  </div></header>
+  <main>
+    <section class="case-hero inventory-hero"><div class="container">
+      <a class="case-breadcrumb" href="../index.html#projetos">← Voltar para projetos</a>
+      <span class="eyebrow">PROJETO DE ESTUDO · SISTEMAS · EM DESENVOLVIMENTO</span>
+      <h1>Sistema de Controle de Estoque</h1>
+      <p class="case-subtitle">Um protótipo para conectar solicitações de materiais, projetos, aprovações e movimentações a uma base de dados estruturada — começando pela modelagem e validação das APIs.</p>
+      <div class="case-meta" aria-label="Tecnologias utilizadas">
+        <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
+        <span>PostgreSQL</span><span>Prisma ORM</span><span>Docker</span>
+      </div>
+      <div class="inventory-hero-note">
+        <strong>Estágio atual: protótipo técnico em evolução</strong>
+        <p>Estrutura relacional criada e testada com uma solicitação de exemplo. O fluxo de aprovação, as telas finais e as integrações externas ainda não foram integralmente implementados nem homologados.</p>
+      </div>
+    </div></section>
+    <section class="section"><div class="container case-grid">
+      <article class="case-content">
+        <span class="eyebrow">01 · CONTEXTO</span>
+        <h2>Materiais, solicitantes e projetos em um só processo.</h2>
+        <p>Em rotinas de almoxarifado, uma retirada de material envolve mais do que informar a quantidade: é preciso saber quem solicitou, para qual projeto, de qual local o item sairá, se há saldo disponível e quem pode autorizar a movimentação.</p>
+        <p>O projeto foi concebido como um estudo de aplicação web para organizar essas relações e diminuir o risco de controles paralelos. O objetivo é estruturar dados e regras de negócio antes de ampliar a interface.</p>
+        <div class="case-callout"><strong>Desafio de modelagem:</strong> uma solicitação pode ter vários itens; um material pode existir em diferentes locais; movimentações devem preservar o histórico; e a autorização deve ser registrada sem confundir pedido com saída efetiva do estoque.</div>
+
+        <span class="eyebrow inventory-section-label">02 · IMPLEMENTAÇÃO VALIDADA</span>
+        <h2>Primeiro a fundação de dados, depois o fluxo completo.</h2>
+        <p>O protótipo utiliza <strong>Next.js com TypeScript e Tailwind CSS</strong>, <strong>PostgreSQL</strong> executado em ambiente Docker e <strong>Prisma ORM</strong> para representar a estrutura do domínio.</p>
+        <div class="inventory-evidence-grid">
+          <div class="inventory-evidence"><span class="inventory-evidence-icon" aria-hidden="true">✓</span><strong>Banco relacional</strong><p>Estrutura com dez tabelas para usuários, projetos, materiais, locais, saldos, solicitações, itens, aprovações e movimentações.</p></div>
+          <div class="inventory-evidence"><span class="inventory-evidence-icon" aria-hidden="true">✓</span><strong>Registro de teste</strong><p>Uma solicitação demonstrativa foi inserida no banco, associando solicitante, projeto, material e quantidade.</p></div>
+          <div class="inventory-evidence"><span class="inventory-evidence-icon" aria-hidden="true">✓</span><strong>Consulta via API</strong><p>Um endpoint GET retornou dados da solicitação e de suas relações, permitindo validar a leitura inicial do domínio.</p></div>
+          <div class="inventory-evidence pending"><span class="inventory-evidence-icon" aria-hidden="true">→</span><strong>Etapas em aberto</strong><p>Telas de solicitações e aprovação, autenticação, movimentação consolidada e integrações ainda dependem de implementação e testes.</p></div>
+        </div>
+        <p class="inventory-small-note">Esses pontos descrevem o estágio conhecido dos testes de desenvolvimento, não uma implantação em produção.</p>
+
+        <span class="eyebrow inventory-section-label">03 · MODELAGEM RELACIONAL</span>
+        <h2>Estrutura de dados organizada por responsabilidades.</h2>
+        <p>O modelo separa as entidades principais de cadastro das tabelas transacionais. Isso permite consultar informações por solicitante, material, projeto e localização, além de preparar a rastreabilidade de aprovações e movimentos.</p>
+        <div class="inventory-model" role="group" aria-label="Esquema simplificado e conceitual dos grupos de tabelas do estoque">
+          <div class="inventory-model-header"><span>MODELO SIMPLIFICADO · VISUAL DEMONSTRATIVO</span><small>Resumo de grupos de tabelas — não é um diagrama ER completo</small></div>
+          <div class="inventory-model-main">
+            <div class="inventory-model-col">
+              <div class="inventory-table"><b>Identidades</b><code>usuarios</code><code>usuarios_perfis</code></div>
+              <div class="inventory-table"><b>Contexto</b><code>projetos</code></div>
+            </div>
+            <div class="inventory-model-center"><span>↓</span><div class="inventory-table focus"><b>Solicitações</b><code>solicitacoes</code><code>itens_solicitacao</code></div><span>↓</span></div>
+            <div class="inventory-model-col">
+              <div class="inventory-table"><b>Materiais e locais</b><code>materiais</code><code>locais_estoque</code><code>saldos_estoque</code></div>
+              <div class="inventory-table"><b>Governança e histórico</b><code>aprovacoes</code><code>movimentacoes_estoque</code></div>
+            </div>
+          </div>
+          <div class="inventory-model-footer">A representação agrupa entidades por função; os relacionamentos e cardinalidades devem ser conferidos no schema Prisma antes de uma publicação técnica detalhada.</div>
+        </div>
+
+        <span class="eyebrow inventory-section-label">04 · PROVA DE CONCEITO</span>
+        <h2>Uma solicitação vinculada a dados reais de teste.</h2>
+        <p>Para validar a primeira integração entre banco e aplicação, foi criado um registro demonstrativo de solicitação de dois sensores indutivos para um projeto. A leitura pela API retornou a solicitação, o solicitante, o projeto e o item associado.</p>
+        <div class="inventory-sample">
+          <div class="inventory-sample-top"><span>EXEMPLO DE TESTE · DADOS DEMONSTRATIVOS</span><span class="inventory-test-status">AGUARDANDO_APROVACAO</span></div>
+          <div class="inventory-sample-row"><span>Solicitação</span><strong>SOL-00001</strong></div>
+          <div class="inventory-sample-row"><span>Material</span><strong>MAT-001 · Sensor indutivo M18</strong></div>
+          <div class="inventory-sample-row"><span>Quantidade</span><strong>2 unidades</strong></div>
+          <div class="inventory-sample-row"><span>Consulta</span><strong>GET · retorno da solicitação e relações</strong></div>
+        </div>
+        <p class="inventory-small-note">Este quadro foi reconstruído para o portfólio a partir dos resultados dos testes. Não é uma captura de uma tela pronta e não comprova o fluxo de aprovação.</p>
+
+        <span class="eyebrow inventory-section-label">05 · PROCESSO PROPOSTO</span>
+        <h2>Da solicitação à movimentação do estoque.</h2>
+        <p>O workflow abaixo representa a visão de produto — etapas a implementar e validar. Ele não descreve um fluxo completo já operacional.</p>
+        <div class="inventory-process" aria-label="Processo alvo para controle de materiais">
+          <div class="inventory-process-item"><span>01</span><div><strong>Solicitar material</strong><p>Usuário, projeto e itens solicitados.</p></div></div>
+          <div class="inventory-process-arrow" aria-hidden="true">↓</div>
+          <div class="inventory-process-item"><span>02</span><div><strong>Validar e aprovar</strong><p>Conferência do saldo, quantidade e autorização pelo responsável.</p></div></div>
+          <div class="inventory-process-arrow" aria-hidden="true">↓</div>
+          <div class="inventory-process-item"><span>03</span><div><strong>Separar e entregar</strong><p>Confirmação do local e da quantidade efetivamente retirada.</p></div></div>
+          <div class="inventory-process-arrow" aria-hidden="true">↓</div>
+          <div class="inventory-process-item"><span>04</span><div><strong>Registrar movimentação</strong><p>Atualização de saldos, histórico e rastreabilidade.</p></div></div>
+        </div>
+
+        <span class="eyebrow inventory-section-label">06 · ROADMAP</span>
+        <h2>O que falta para evoluir o protótipo.</h2>
+        <div class="inventory-roadmap">
+          <div><span>1</span><section><strong>Concluir interfaces de solicitações</strong><p>Formulários, visualização dos itens e estados do pedido.</p></section></div>
+          <div><span>2</span><section><strong>Implementar aprovação e permissões</strong><p>Regras de autorização, rejeição e registro de responsável.</p></section></div>
+          <div><span>3</span><section><strong>Fechar movimentação e saldo</strong><p>Validar concorrência, divergências, locais de estoque e histórico.</p></section></div>
+          <div><span>4</span><section><strong>Testar integrações externas</strong><p>Omie e canais de comunicação foram considerados no planejamento, mas não há integração em produção comprovada.</p></section></div>
+          <div><span>5</span><section><strong>Ampliar testes e documentação</strong><p>Testes de API, interface e regras de negócio, com dados fictícios.</p></section></div>
+        </div>
+
+        <span class="eyebrow inventory-section-label">07 · COMPETÊNCIAS</span>
+        <h2>O que este projeto demonstra.</h2>
+        <div class="inventory-skill-tags"><span>Análise de requisitos</span><span>Modelagem relacional</span><span>PostgreSQL</span><span>Prisma ORM</span><span>APIs</span><span>TypeScript</span><span>Workflow</span><span>Regras de negócio</span><span>Testes com dados demonstrativos</span></div>
+        <div class="inventory-privacy"><strong>Sobre a apresentação pública</strong><p>O case descreve uma prova de conceito para um problema operacional. As representações desta página são demonstrativas e não revelam bases reais, credenciais ou material reservado de terceiros. O código-fonte ainda não está publicado como repositório de portfólio.</p></div>
+        <div class="case-actions"><a class="btn primary" href="../index.html#projetos">Ver outros projetos</a><a class="btn secondary" href="../index.html#contato">Entrar em contato</a></div>
+      </article>
+      <aside class="case-sidebar"><span class="inventory-aside-eyebrow">PROTÓTIPO DE ESTUDO</span><h3>Controle de Estoque</h3>
+        <dl>
+          <dt>Status</dt><dd>Modelagem e testes iniciais; em desenvolvimento</dd>
+          <dt>Interface</dt><dd>Next.js · TypeScript · Tailwind CSS</dd>
+          <dt>Banco</dt><dd>PostgreSQL · Prisma ORM</dd>
+          <dt>Ambiente</dt><dd>Docker · execução local</dd>
+          <dt>Estrutura de dados</dt><dd>Dez tabelas para cadastros e transações</dd>
+          <dt>Evidência técnica</dt><dd>Solicitação de teste gravada e recuperada por API GET</dd>
+          <dt>Integrações externas</dt><dd>Planejadas / não implantadas</dd>
+          <dt>Código público</dt><dd>Não disponível nesta etapa</dd>
+        </dl>
+        <div class="inventory-aside-foot"><strong>Transparência</strong><p>Diagramas e exemplo de solicitação são representações preparadas para esta apresentação, não prints de um software em produção.</p></div>
+      </aside>
+    </div></section>
+  </main>
+  <footer><div class="container footer-content"><span>© <span id="year"></span> Thiago Moura Inácio</span><span>Estudo aplicado · Controle de Estoque</span></div></footer>
+  <script src="../script.js"></script>
+</body>
+</html>

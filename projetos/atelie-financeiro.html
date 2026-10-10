@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ateliê Financeiro: case de sistema web em Next.js, TypeScript, PostgreSQL e Prisma para a gestão financeira de pequenos negócios." />
+  <title>Ateliê Financeiro | Thiago Moura Inácio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Thiago Moura Inácio</a>
+      <nav aria-label="Navegação principal">
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="../index.html#atuacao">Atuação</a>
+        <a href="../index.html#projetos">Projetos</a>
+        <a href="../index.html#tecnologias">Tecnologias</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero atelie-hero">
+      <div class="container">
+        <a class="case-breadcrumb" href="../index.html#projetos">← Voltar para projetos</a>
+        <span class="eyebrow">PROJETO PESSOAL · FULL STACK · EM DESENVOLVIMENTO</span>
+        <h1>Ateliê Financeiro</h1>
+        <p class="case-subtitle">
+          Um sistema web concebido para simplificar o controle financeiro de um pequeno negócio,
+          reunindo informações que antes ficavam divididas entre agenda, e-mails de compras,
+          cartões, extratos e controles manuais.
+        </p>
+        <div class="case-meta" aria-label="Tecnologias utilizadas">
+          <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
+          <span>PostgreSQL</span><span>Prisma</span><span>Docker</span>
+        </div>
+        <div class="atelie-hero-note">
+          <strong>Estado do projeto</strong>
+          <p>Protótipo funcional em ambiente local. Módulos e fluxos em evolução; integrações externas e uso com dados reais ainda em validação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-grid">
+        <article class="case-content">
+          <span class="eyebrow">01 · CONTEXTO</span>
+          <h2>O desafio: enxergar o financeiro em um só lugar.</h2>
+          <p>
+            A ideia surgiu de uma necessidade concreta de organizar o financeiro de um pequeno
+            ateliê de serviços de beleza. Informações de <strong>receitas, despesas, compras,
+            cartões e extratos</strong> vinham de fontes diferentes, dificultando o fechamento do
+            mês e a identificação do que pertencia ao negócio.
+          </p>
+          <p>
+            Outro desafio era reconhecer compras feitas em marketplaces e relacioná-las às
+            faturas, evitando registros duplicados. A solução também precisa distinguir
+            <strong>compras do salão, pessoais, presentes e itens ainda a confirmar</strong>, sem
+            misturar despesas particulares com indicadores do negócio.
+          </p>
+          <div class="case-callout">
+            <strong>Objetivo:</strong> criar uma aplicação que permita consolidar e revisar
+            movimentações financeiras, organizar compras e oferecer uma visão clara do fechamento mensal.
+          </div>
+
+          <span class="eyebrow atelie-next-label">02 · SOLUÇÃO</span>
+          <h2>Da necessidade de negócio ao produto digital.</h2>
+          <p>
+            O Ateliê Financeiro está sendo desenvolvido como uma aplicação web com navegação
+            por módulos. O trabalho envolve estruturar regras de negócio, organizar dados,
+            desenhar telas, implementar fluxos de lançamento e revisão e testar o funcionamento
+            em computador e celular.
+          </p>
+          <div class="atelie-module-grid">
+            <div class="atelie-module"><span class="atelie-module-icon" aria-hidden="true">◫</span><h3>Visão geral</h3><p>Painel para acompanhamento do mês e indicadores financeiros.</p></div>
+            <div class="atelie-module"><span class="atelie-module-icon" aria-hidden="true">↗</span><h3>Receitas e despesas</h3><p>Organização de lançamentos, categorias e natureza das movimentações.</p></div>
+            <div class="atelie-module"><span class="atelie-module-icon" aria-hidden="true">▤</span><h3>Compras</h3><p>Registro e acompanhamento de pedidos, com atenção a duplicidades.</p></div>
+            <div class="atelie-module"><span class="atelie-module-icon" aria-hidden="true">▣</span><h3>Cartões e extratos</h3><p>Estrutura para conciliação, conferência e fechamento financeiro.</p></div>
+            <div class="atelie-module"><span class="atelie-module-icon" aria-hidden="true">✓</span><h3>Revisar</h3><p>Fila de ocorrências que precisam de conferência ou classificação.</p></div>
+            <div class="atelie-module"><span class="atelie-module-icon" aria-hidden="true">⟳</span><h3>Automações</h3><p>Preparação de fluxos de importação e interpretação de dados externos.</p></div>
+          </div>
+          <p class="atelie-disclaimer">Os módulos acima representam a estrutura de navegação e os processos modelados. Não significam que todas as integrações estejam concluídas ou operando em produção.</p>
+
+          <span class="eyebrow atelie-next-label">03 · ARQUITETURA</span>
+          <h2>Como organizei a solução.</h2>
+          <p>
+            O sistema utiliza <strong>Next.js com TypeScript</strong> para a aplicação web,
+            <strong>PostgreSQL</strong> para persistência e <strong>Prisma</strong> no acesso e
+            modelagem dos dados. O ambiente de desenvolvimento também utiliza Docker.
+          </p>
+          <div class="atelie-diagram" role="group" aria-label="Diagrama conceitual do sistema Ateliê Financeiro">
+            <div class="atelie-diagram-heading">
+              <span>FLUXO RESUMIDO DO SISTEMA</span>
+              <small>Ilustração conceitual — não é uma captura da aplicação</small>
+            </div>
+            <div class="atelie-diagram-stack">
+              <div class="atelie-diagram-node atelie-ui">
+                <span class="atelie-diagram-overline">INTERFACE WEB</span>
+                <strong>Next.js + TypeScript</strong>
+                <span>Painel · Receitas · Despesas · Compras · Revisão</span>
+              </div>
+              <div class="atelie-diagram-arrow" aria-hidden="true">↓</div>
+              <div class="atelie-diagram-node atelie-rules">
+                <span class="atelie-diagram-overline">REGRAS DE NEGÓCIO</span>
+                <strong>Classificação · Conciliação · Verificação de duplicidade</strong>
+                <span>Tratamento e validação das movimentações</span>
+              </div>
+              <div class="atelie-diagram-arrow" aria-hidden="true">↓</div>
+              <div class="atelie-diagram-node atelie-db">
+                <span class="atelie-diagram-overline">PERSISTÊNCIA</span>
+                <strong>Prisma + PostgreSQL</strong>
+                <span>Registros estruturados para os módulos financeiros</span>
+              </div>
+              <div class="atelie-diagram-sources">
+                <div><b>Outlook / Microsoft Graph</b><span>Autorização e conexão em validação</span></div>
+                <div><b>Extratos e faturas</b><span>Importação real ainda a validar</span></div>
+                <div><b>Minha Agenda</b><span>Integração estudada / planejada</span></div>
+              </div>
+            </div>
+          </div>
+
+          <span class="eyebrow atelie-next-label">04 · MEU PAPEL</span>
+          <h2>Requisitos, desenvolvimento e validação.</h2>
+          <p>
+            O projeto vem sendo construído de maneira iterativa, com apoio de ferramentas de
+            desenvolvimento assistido por IA. Minha atuação envolve traduzir a necessidade real
+            em requisitos, definir regras e prioridades, acompanhar a implementação,
+            realizar testes, reproduzir falhas e revisar os resultados das entregas.
+          </p>
+          <ul>
+            <li>Levantamento e refinamento dos requisitos de um fluxo financeiro real.</li>
+            <li>Definição dos módulos, estados dos lançamentos e regras de classificação.</li>
+            <li>Estruturação de fluxos envolvendo compras, faturas, extratos e revisão.</li>
+            <li>Organização e validação da aplicação em ambiente local, incluindo banco de dados.</li>
+            <li>Testes funcionais, análise de comportamentos inesperados e prevenção de duplicidades.</li>
+            <li>Investigação de integração OAuth com Outlook/Microsoft Graph e tratamento de falhas.</li>
+          </ul>
+
+          <span class="eyebrow atelie-next-label">05 · VALIDAÇÃO</span>
+          <h2>O que já foi testado — e o que ainda falta.</h2>
+          <p>
+            No ciclo de desenvolvimento, foram executadas verificações de build, testes e
+            navegação. Também ocorreram testes específicos do tratamento de compras importadas,
+            incluindo repetição do processamento para observar se novos lançamentos duplicados
+            seriam criados.
+          </p>
+          <div class="atelie-status-grid">
+            <div class="atelie-status-card done">
+              <div class="atelie-status-heading"><span aria-hidden="true">✓</span> Verificações realizadas</div>
+              <ul>
+                <li>Fluxos principais conferidos em navegador, incluindo desktop e mobile.</li>
+                <li>Uma rodada geral registrou 46 testes automatizados aprovados, sem erros de build.</li>
+                <li>Cenários de compras testados com verificação de duplicidades e itens para revisão.</li>
+                <li>Fluxos de autenticação e recuperação de senha submetidos a validações.</li>
+              </ul>
+            </div>
+            <div class="atelie-status-card pending">
+              <div class="atelie-status-heading"><span aria-hidden="true">◷</span> Em evolução / pendente</div>
+              <ul>
+                <li>Concluir a autorização e conexão estável do Outlook via Microsoft Graph.</li>
+                <li>Validar extratos, faturas e integrações com arquivos e dados reais.</li>
+                <li>Confirmar a integração de receitas com o Minha Agenda.</li>
+                <li>Revisar segurança, qualidade dos dados e comportamento antes de qualquer uso em produção.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="atelie-honesty">
+            <strong>Transparência sobre o estágio:</strong> esta apresentação descreve uma aplicação
+            em desenvolvimento, com testes locais e integrações parcialmente validadas. Não é um
+            produto comercial publicado ou uma integração de produção concluída.
+          </div>
+
+          <span class="eyebrow atelie-next-label">06 · APRENDIZADOS</span>
+          <h2>Por que este projeto importa no meu portfólio.</h2>
+          <p>
+            Ele conecta conhecimentos de análise de sistemas e dados a um problema concreto.
+            Mais do que criar telas, foi necessário pensar no ciclo de vida de informações
+            financeiras, regras de classificação, integração com serviços externos e
+            recuperação após falhas — aprendizados relevantes para funções de
+            desenvolvimento, dados e automação de processos.
+          </p>
+          <div class="atelie-lessons">
+            <span>Levantamento de requisitos</span>
+            <span>Modelagem de dados</span>
+            <span>Regras de negócio</span>
+            <span>Next.js e TypeScript</span>
+            <span>PostgreSQL e Prisma</span>
+            <span>Integrações e OAuth</span>
+            <span>Testes e depuração</span>
+            <span>Desenvolvimento assistido por IA</span>
+          </div>
+          <h3>Próximas melhorias do case</h3>
+          <p>
+            Esta página será atualizada com capturas reais, anonimizadas, da aplicação e com
+            resultados de homologação assim que os fluxos pendentes estiverem confirmados.
+            O código completo não está publicado aqui porque o projeto ainda contém
+            configurações e integrações que precisam de revisão antes de uma abertura segura.
+          </p>
+          <div class="case-actions">
+            <a class="btn primary" href="../index.html#projetos">Ver outros projetos</a>
+            <a class="btn secondary" href="../index.html#contato">Entrar em contato</a>
+          </div>
+        </article>
+
+        <aside class="case-sidebar">
+          <span class="atelie-aside-label">PROJETO PESSOAL</span>
+          <h3>Ateliê Financeiro</h3>
+          <dl>
+            <dt>Área</dt><dd>Full Stack · Dados · Automação</dd>
+            <dt>Status</dt><dd>Protótipo local em desenvolvimento</dd>
+            <dt>Público-alvo</dt><dd>Pequenos negócios de serviços</dd>
+            <dt>Front-end / aplicação</dt><dd>Next.js, TypeScript, Tailwind CSS</dd>
+            <dt>Banco e acesso a dados</dt><dd>PostgreSQL, Prisma</dd>
+            <dt>Ambiente</dt><dd>Docker / execução local</dd>
+            <dt>Integração em validação</dt><dd>Microsoft Graph (Outlook)</dd>
+            <dt>Integrações estudadas</dt><dd>Minha Agenda, marketplaces e importações financeiras</dd>
+            <dt>Disponibilidade</dt><dd>Sem demonstração pública nesta etapa</dd>
+          </dl>
+          <div class="atelie-aside-footer">
+            <strong>Nota de privacidade</strong>
+            <p>Case apresentado sem dados financeiros reais, credenciais, mensagens privadas ou informações pessoais do negócio.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>© <span id="year"></span> Thiago Moura Inácio</span>
+      <span>Ateliê Financeiro · Projeto pessoal em desenvolvimento</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

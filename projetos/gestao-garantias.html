@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sistema de Gestão de Garantias: protótipo de aplicação web em Next.js, TypeScript e PostgreSQL para organização de solicitações e atendimentos. Case profissional anonimizado." />
+  <title>Sistema de Gestão de Garantias | Thiago Moura Inácio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Thiago Moura Inácio</a>
+      <nav aria-label="Navegação principal">
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="../index.html#atuacao">Atuação</a>
+        <a href="../index.html#projetos">Projetos</a>
+        <a href="../index.html#tecnologias">Tecnologias</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero warranty-hero">
+      <div class="container">
+        <a class="case-breadcrumb" href="../index.html#projetos">← Voltar para projetos</a>
+        <span class="eyebrow">CASE ANONIMIZADO · PROTÓTIPO WEB · EM DESENVOLVIMENTO</span>
+        <h1>Sistema de Gestão de Garantias</h1>
+        <p class="case-subtitle">Da organização manual de solicitações ao desenho de uma aplicação centralizada para gerenciar clientes, atendimentos e o ciclo de vida das garantias.</p>
+        <div class="case-meta" aria-label="Tecnologias do protótipo">
+          <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
+          <span>PostgreSQL</span><span>Prisma ORM</span><span>Docker</span>
+        </div>
+        <div class="warranty-hero-note">
+          <strong>Estágio atual: protótipo inicial, não implantado</strong>
+          <p>Há uma base de aplicação e ambiente de banco de dados em desenvolvimento. Fluxos de atendimento, emissão de OS e integração com cliente ainda precisam de implementação e validação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-grid">
+        <article class="case-content">
+          <span class="eyebrow">01 · CONTEXTO</span>
+          <h2>O problema: informação espalhada e acompanhamento manual.</h2>
+          <p>O projeto nasceu da observação de um fluxo de garantias: o cliente registrava sua solicitação em um formulário, os dados chegavam a uma planilha e uma segunda planilha era usada para acompanhar o andamento, as datas e a responsabilidade pelo atendimento. Esses controles também serviam de base para indicadores.</p>
+          <p>Embora atendesse à operação, essa estrutura tornava o histórico fragmentado e exigia conciliações e atualizações em lugares diferentes. Havia ainda a necessidade de gerar uma <strong>ordem de serviço (OS)</strong> e compartilhá-la com o cliente — funcionalidade não disponível naquele fluxo.</p>
+          <div class="case-callout"><strong>Objetivo:</strong> estudar e prototipar uma aplicação única, com dados estruturados e um ciclo rastreável de solicitações, para reduzir controles paralelos e preparar futuras automações.</div>
+
+          <span class="eyebrow warranty-section-label">02 · O QUE FOI DESENVOLVIDO</span>
+          <h2>Uma fundação técnica para um sistema maior.</h2>
+          <p>Foi iniciado um protótipo web independente, estruturado em <strong>Next.js com TypeScript</strong>, utilizando <strong>PostgreSQL</strong> em ambiente Docker e <strong>Prisma ORM</strong> para modelagem e acesso ao banco. Houve trabalho inicial de configuração do projeto e estruturação do cadastro de clientes.</p>
+          <div class="warranty-facts">
+            <div class="warranty-fact">
+              <span class="warranty-fact-symbol" aria-hidden="true">✓</span>
+              <div><strong>Iniciado e estruturado</strong><p>Projeto web independente, com tecnologias do stack definidas e ambiente local configurado.</p></div>
+            </div>
+            <div class="warranty-fact">
+              <span class="warranty-fact-symbol" aria-hidden="true">✓</span>
+              <div><strong>Base de persistência</strong><p>PostgreSQL e Prisma, com etapa inicial de modelagem de dados de clientes e migração do banco.</p></div>
+            </div>
+            <div class="warranty-fact planned">
+              <span class="warranty-fact-symbol" aria-hidden="true">◷</span>
+              <div><strong>Fluxo completo de garantias</strong><p>Solicitações, estados, responsáveis, histórico, anexos e atendimento integrados permanecem como escopo a implementar e testar.</p></div>
+            </div>
+            <div class="warranty-fact planned">
+              <span class="warranty-fact-symbol" aria-hidden="true">◷</span>
+              <div><strong>Ordens de serviço e comunicação</strong><p>Geração de OS, notificações e acompanhamento pelo cliente são funcionalidades desejadas para etapas posteriores.</p></div>
+            </div>
+          </div>
+          <p class="warranty-disclaimer">A lista distingue avanços conhecidos do protótipo e escopo planejado. Não representa um software completo ou implantado em ambiente produtivo.</p>
+
+          <span class="eyebrow warranty-section-label">03 · FLUXO PROPOSTO</span>
+          <h2>Como o processo foi pensado.</h2>
+          <p>O desenho abaixo é <strong>conceitual</strong>. Ele organiza o ciclo pretendido do atendimento, não uma tela real da aplicação e não uma comprovação de que cada etapa já esteja funcionando.</p>
+          <div class="warranty-flow" role="group" aria-label="Fluxo conceitual proposto para o sistema de garantias">
+            <div class="warranty-flow-heading"><span>PROCESSO ALVO · REPRESENTAÇÃO CONCEITUAL</span><small>Fluxo planejado — não implantado</small></div>
+            <div class="warranty-flow-grid">
+              <div class="warranty-flow-step"><span class="warranty-step-num">01</span><strong>Solicitação</strong><small>Registro de ocorrência e dados básicos</small></div>
+              <div class="warranty-flow-arrow" aria-hidden="true">→</div>
+              <div class="warranty-flow-step"><span class="warranty-step-num">02</span><strong>Triagem</strong><small>Classificação, prioridade e responsável</small></div>
+              <div class="warranty-flow-arrow" aria-hidden="true">→</div>
+              <div class="warranty-flow-step"><span class="warranty-step-num">03</span><strong>Atendimento</strong><small>Acompanhamento de status e histórico</small></div>
+              <div class="warranty-flow-arrow" aria-hidden="true">→</div>
+              <div class="warranty-flow-step"><span class="warranty-step-num">04</span><strong>Encerramento</strong><small>OS, confirmação e indicadores</small></div>
+            </div>
+            <div class="warranty-data-line"><span>BANCO RELACIONAL</span><strong>PostgreSQL + Prisma</strong><span>Estrutura para clientes, solicitações e registros de atendimento</span></div>
+          </div>
+
+          <span class="eyebrow warranty-section-label">04 · REQUISITOS E TECNOLOGIA</span>
+          <h2>Do levantamento do processo à arquitetura do protótipo.</h2>
+          <p>O ponto de partida foi separar o que já existia — entrada de dados, controles em planilhas e indicadores — do que a solução deveria acrescentar. A arquitetura escolhida permite evoluir gradualmente para uma interface web com persistência relacional e regras de negócio próprias.</p>
+          <div class="warranty-tech-grid">
+            <div><b>Interface e aplicação</b><span>Next.js · TypeScript · Tailwind CSS</span></div>
+            <div><b>Banco relacional</b><span>PostgreSQL</span></div>
+            <div><b>Modelagem e persistência</b><span>Prisma ORM · migrações</span></div>
+            <div><b>Ambiente local</b><span>Docker</span></div>
+          </div>
+          <h3>Competências que o trabalho evidencia</h3>
+          <ul>
+            <li>Levantamento de requisitos e identificação de gargalos operacionais.</li>
+            <li>Desenho de processos e definição de estados para atendimento de solicitações.</li>
+            <li>Planejamento de entidades e relacionamentos em banco de dados.</li>
+            <li>Configuração e desenvolvimento inicial de aplicação com stack web moderna.</li>
+            <li>Visão de integração entre dados de entrada, acompanhamento e indicadores.</li>
+            <li>Separação entre protótipo técnico, funcionalidades planejadas e implantação real.</li>
+          </ul>
+
+          <span class="eyebrow warranty-section-label">05 · PRÓXIMAS ETAPAS</span>
+          <h2>O que será necessário para virar um sistema utilizável.</h2>
+          <div class="warranty-roadmap">
+            <div><span>1</span><div><strong>Cadastros e entidades</strong><p>Revisar regras de clientes, solicitações, ocorrências e atendimentos, com dados exclusivamente fictícios.</p></div></div>
+            <div><span>2</span><div><strong>Fluxo de chamados</strong><p>Implementar abertura, triagem, atualização de status, responsáveis e histórico.</p></div></div>
+            <div><span>3</span><div><strong>Ordens de serviço</strong><p>Desenvolver geração de OS e validar a comunicação do andamento.</p></div></div>
+            <div><span>4</span><div><strong>Testes e qualidade</strong><p>Validar permissões, integridade dos dados, tratamento de erros e jornadas completas antes de qualquer uso real.</p></div></div>
+          </div>
+
+          <span class="eyebrow warranty-section-label">06 · APRENDIZADOS</span>
+          <h2>Por que este case é relevante para tecnologia.</h2>
+          <p>Ele evidencia uma competência importante para funções de desenvolvimento de sistemas, análise de dados e automação: <strong>traduzir um fluxo real de trabalho em requisitos, estruturas de dados e etapas de implementação</strong>.</p>
+          <p>O conhecimento prévio do processo ajuda a identificar funcionalidades necessárias antes da programação. O protótipo, por sua vez, permite praticar tecnologias atuais enquanto o escopo é desenvolvido com cautela e validação.</p>
+          <div class="warranty-privacy"><strong>Privacidade e propriedade intelectual</strong><p>Este case foi reescrito para fins demonstrativos, sem citar a empresa de origem do processo, expor clientes, incorporar dados ou publicar materiais corporativos. O fluxograma é uma representação criada para o portfólio e não uma captura de um sistema da empresa.</p></div>
+          <div class="case-actions"><a class="btn primary" href="../index.html#projetos">Ver outros projetos</a><a class="btn secondary" href="../index.html#contato">Entrar em contato</a></div>
+        </article>
+        <aside class="case-sidebar">
+          <span class="warranty-aside-label">ESTUDO APLICADO · CASE ANONIMIZADO</span>
+          <h3>Gestão de Garantias</h3>
+          <dl>
+            <dt>Status</dt><dd>Protótipo inicial em desenvolvimento</dd>
+            <dt>Tipo</dt><dd>Estudo aplicado baseado em problema de negócio real</dd>
+            <dt>Objetivo</dt><dd>Centralizar solicitações e estruturar o fluxo de atendimento</dd>
+            <dt>Aplicação</dt><dd>Next.js · TypeScript · Tailwind CSS</dd>
+            <dt>Banco</dt><dd>PostgreSQL · Prisma ORM</dd>
+            <dt>Ambiente</dt><dd>Docker · execução local</dd>
+            <dt>OS automática</dt><dd>Planejada, não concluída</dd>
+            <dt>Publicação do código</dt><dd>Não disponível nesta etapa</dd>
+          </dl>
+          <div class="warranty-aside-foot"><strong>Transparência</strong><p>O fluxograma ilustra o processo proposto. Não representa funcionalidades homologadas nem sistema implantado.</p></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-content"><span>© <span id="year"></span> Thiago Moura Inácio</span><span>Case anonimizado · Sistema de Gestão de Garantias</span></div></footer>
+  <script src="../script.js"></script>
+</body>
+</html>
