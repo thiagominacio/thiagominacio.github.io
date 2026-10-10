@@ -419,3 +419,59 @@ footer { background:var(--bg); color:#c7d0de; padding:28px 0; }
  .warranty-flow-arrow { transform:rotate(90deg); }
  .warranty-flow-heading {align-items:flex-start;flex-direction:column;}
 }
+
+
+/* V6 — Sistema de Controle de Estoque */
+.inventory-hero{background:radial-gradient(circle at 91% 6%,rgba(56,189,248,.19),transparent 36%),linear-gradient(137deg,#0b1120,#12213a);}
+.inventory-hero-note{max-width:850px;margin-top:28px;padding:18px 22px;background:rgba(255,255,255,.06);border:1px solid rgba(147,197,253,.24);border-radius:14px;}
+.inventory-hero-note strong{font-size:.92rem;color:#a5f3fc;}
+.inventory-hero-note p{margin:7px 0 0;font-size:.94rem;color:#dae8f6;}
+.inventory-section-label{display:block;margin-top:49px;}
+.inventory-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:24px 0 15px;}
+.inventory-evidence{border:1px solid #cee4dc;background:#f2fbf6;padding:21px;border-radius:15px;}
+.inventory-evidence.pending{border-color:#dbe3ee;background:#f8faff;}
+.inventory-evidence-icon{display:grid;place-items:center;width:29px;height:29px;border-radius:100%;background:#d3f7e6;color:#126447;font-weight:900;margin-bottom:12px;}
+.inventory-evidence.pending .inventory-evidence-icon{color:#275692;background:#e8f0fc;}
+.inventory-evidence strong{display:block;color:#173146;font-size:.98rem;}
+.inventory-evidence p{font-size:.87rem;margin:7px 0 0;}
+.inventory-small-note{font-size:.82rem!important;color:#718099!important;font-style:italic;}
+.inventory-model{margin:25px 0 38px;border:1px solid #ccdbeb;border-radius:17px;background:#f7faff;overflow:hidden;}
+.inventory-model-header{background:#14243b;color:#c4ecff;padding:15px 20px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.inventory-model-header span{font-size:.75rem;font-weight:800;letter-spacing:.09em;}
+.inventory-model-header small{color:#cbd5e1;font-size:.73rem;}
+.inventory-model-main{display:grid;grid-template-columns:1fr .9fr 1fr;gap:14px;padding:23px;align-items:center;}
+.inventory-model-col{display:flex;flex-direction:column;gap:12px;}
+.inventory-model-center{display:flex;flex-direction:column;align-items:center;gap:7px;color:#3b82f6;font-weight:900;}
+.inventory-table{padding:17px;border:1px solid #d3dfec;border-radius:12px;background:white;box-shadow:0 5px 18px rgba(15,23,42,.03);display:flex;flex-direction:column;gap:6px;min-width:0;}
+.inventory-table.focus{border-color:#8fb9f4;background:#f0f7ff;width:100%;}
+.inventory-table b{font-size:.85rem;color:#1e3a59;margin-bottom:5px;}
+.inventory-table code{font-size:.78rem;color:#4f637f;overflow-wrap:anywhere;}
+.inventory-model-footer{padding:14px 20px;border-top:1px solid #dae4ef;background:white;font-size:.78rem;color:#607189;}
+.inventory-sample{margin:24px 0 12px;border:1px solid #dbe5ed;border-radius:15px;overflow:hidden;background:white;}
+.inventory-sample-top{padding:17px 20px;background:#eff6ff;display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;align-items:center;color:#33537d;font-weight:800;font-size:.74rem;letter-spacing:.06em;}
+.inventory-test-status{background:#fef3c7;color:#92400e;border-radius:999px;padding:7px 9px;font-size:.69rem;letter-spacing:0;}
+.inventory-sample-row{display:grid;grid-template-columns:1fr 1.5fr;gap:12px;padding:14px 20px;border-top:1px solid #e7edf5;}
+.inventory-sample-row span{font-size:.87rem;color:#64748b;}
+.inventory-sample-row strong{font-size:.87rem;color:#243850;overflow-wrap:anywhere;}
+.inventory-process{margin:23px 0 32px;padding:24px;border:1px solid #d6e1ee;border-radius:16px;background:#f5f8ff;max-width:680px;}
+.inventory-process-item{display:flex;gap:17px;align-items:flex-start;background:white;border:1px solid #dce5ef;border-radius:12px;padding:17px 19px;}
+.inventory-process-item>span{font-size:.87rem;font-weight:900;color:#1d4ed8;background:#eaf2ff;padding:9px;border-radius:10px;}
+.inventory-process-item strong{font-size:.94rem;color:#193453;}
+.inventory-process-item p{font-size:.83rem;margin:5px 0 0;}
+.inventory-process-arrow{text-align:center;color:#3b82f6;font-size:1.3rem;line-height:1.7;}
+.inventory-roadmap{border:1px solid #dde5ee;border-radius:15px;padding:8px 22px;margin:22px 0 36px;}
+.inventory-roadmap>div{display:flex;gap:15px;padding:18px 0;}
+.inventory-roadmap>div+div{border-top:1px solid #e8edf4;}
+.inventory-roadmap>div>span{display:grid;place-items:center;width:30px;height:30px;flex:none;background:#e7f1ff;color:#1e4fa8;border-radius:9px;font-size:.89rem;font-weight:900;}
+.inventory-roadmap strong{color:#24354a;font-size:.95rem;}
+.inventory-roadmap p{margin:5px 0 0;font-size:.88rem;}
+.inventory-skill-tags{display:flex;flex-wrap:wrap;gap:9px;margin:25px 0 36px;}
+.inventory-skill-tags span{background:#ecf6ff;border:1px solid #cde3fa;color:#215c99;font-size:.78rem;font-weight:700;border-radius:999px;padding:9px 12px;}
+.inventory-privacy{border:1px solid #dbe5ef;background:#f6f9fd;border-radius:14px;padding:22px;margin-bottom:30px;}
+.inventory-privacy strong{color:#1f426a;}
+.inventory-privacy p{margin:8px 0 0;font-size:.86rem;}
+.inventory-aside-eyebrow{font-size:.7rem;font-weight:900;letter-spacing:.1em;color:#1d74a0;}
+.inventory-aside-foot{border-top:1px solid #dce4ee;margin-top:24px;padding-top:20px;}
+.inventory-aside-foot p{font-size:.84rem;margin:8px 0 0;}
+@media(max-width:850px){.inventory-model-main{grid-template-columns:1fr;}.inventory-model-center{flex-direction:row;justify-content:center;}.inventory-model-center .inventory-table{width:auto;min-width:50%;}.inventory-evidence-grid{grid-template-columns:1fr;}}
+@media(max-width:520px){.inventory-sample-row{grid-template-columns:1fr;gap:4px;}.inventory-model-main{padding:14px;}.inventory-model-center .inventory-table{min-width:70%;}}

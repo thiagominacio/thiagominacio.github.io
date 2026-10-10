@@ -41,3 +41,9 @@ https://thiagominacio.github.io
 ## Transparência dos cases
 
 O Ateliê Financeiro é descrito como um projeto pessoal em desenvolvimento. Integrações externas ainda em validação não são declaradas concluídas. Nenhum dado real ou segredo de configuração é publicado no portfólio.
+
+## Case adicionado na V6
+
+- `projetos/controle-estoque.html`: sistema de controle de estoque — protótipo de estudo com modelagem relacional e teste inicial da API.
+
+**Nota de publicação:** as pastas `projetos` e `assets` precisam existir dentro do repositório com seus arquivos. Se uma página retornar 404, confira primeiro se o arquivo existe na ramificação `main`, neste caminho exato.
