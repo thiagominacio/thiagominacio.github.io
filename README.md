@@ -22,6 +22,7 @@ https://thiagominacio.github.io
 ## Próximas melhorias
 
 - Página individual da Baozi Store API criada
+- Página individual do case de Banco de Dados e SQL criada
 - Adicionar páginas individuais para os demais projetos
 - Inserir screenshots e demonstrações
 - Adicionar currículo para download

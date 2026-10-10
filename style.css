@@ -276,3 +276,37 @@ footer { background:var(--bg); color:#c7d0de; padding:28px 0; }
     position: static;
   }
 }
+
+/* Case: Banco de Dados e SQL */
+.sql-step {
+  display:flex; align-items:center; gap:12px; margin:36px 0 18px;
+}
+.sql-step-number {
+  flex:0 0 auto; display:inline-grid; place-items:center;
+  width:36px;height:36px;border-radius:11px;
+  background:#dbeafe;color:#1d4ed8;font-size:.89rem;font-weight:800;
+}
+.sql-step h3 { margin:0; }
+.sql-info-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 28px; }
+.sql-info {
+  border:1px solid var(--line);background:#f8fafc;border-radius:14px;padding:18px;
+}
+.sql-info strong {display:block;margin-bottom:5px;color:var(--text);font-size:.97rem;}
+.sql-info p {margin:0;font-size:.90rem;}
+.sql-code {
+  position:relative;background:#0f172a;color:#e0e7ff;border-radius:14px;
+  padding:18px 20px;overflow-x:auto;margin:14px 0 24px;
+  border:1px solid #1e293b;font: .87rem/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;
+}
+.sql-code code {font:inherit;white-space:pre;}
+.sql-tech-note {background:#eff6ff;border:1px solid #bfdbfe;padding:18px;border-radius:14px;margin:20px 0;color:#334155;}
+.sql-tech-note strong {color:#1e40af;}
+.sql-figure{margin:26px 0 34px;}
+.sql-figure img {width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:14px;background:white;}
+.sql-figure figcaption{font-size:.83rem;color:#64748b;margin-top:8px;}
+.sql-figure.mer img{max-width:560px;margin-inline:auto;}
+.sql-figure.model img{max-width:660px;margin-inline:auto;}
+@media(max-width:640px){
+  .sql-info-grid{grid-template-columns:1fr;}
+  .sql-code{font-size:.76rem;padding:14px;}
+}

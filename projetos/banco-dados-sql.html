@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto acadêmico de Thiago Moura Inácio: modelagem de dados e implementação SQL em MySQL para ordens de serviço, com consultas JOIN e GROUP BY." />
+  <title>Banco de Dados e SQL | Thiago Moura Inácio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Thiago Moura Inácio</a>
+      <nav>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="../index.html#atuacao">Atuação</a>
+        <a href="../index.html#projetos">Projetos</a>
+        <a href="../index.html#tecnologias">Tecnologias</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="container">
+        <a class="case-breadcrumb" href="../index.html#projetos">← Voltar para projetos</a>
+        <span class="eyebrow">PROJETO ACADÊMICO · DADOS &amp; SQL</span>
+        <h1>Banco de Dados Relacional e SQL</h1>
+        <p class="case-subtitle">
+          Da modelagem de um sistema corporativo à implementação de um banco para ordens de serviço:
+          entidades, relacionamentos, chaves e consultas SQL aplicadas a problemas de negócio.
+        </p>
+        <div class="case-meta">
+          <span>MySQL</span><span>SQL</span><span>MySQL Workbench</span>
+          <span>Modelagem MER</span><span>Chaves PK/FK</span><span>JOIN</span><span>GROUP BY</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-grid">
+        <article class="case-content">
+          <span class="eyebrow">O PROJETO</span>
+          <h2>Dados estruturados para resolver problemas reais de gestão.</h2>
+          <p>
+            Atividade prática da graduação em Análise e Desenvolvimento de Sistemas (UNINTER),
+            composta por <strong>dois exercícios distintos</strong>: modelagem conceitual de um
+            sistema corporativo industrial e implementação de um banco relacional para controle de
+            ordens de serviço. Ambos foram desenvolvidos como estudos acadêmicos.
+          </p>
+          <div class="case-callout">
+            <strong>Competências demonstradas:</strong> interpretação de regras de negócio,
+            estruturação de entidades e relacionamentos, definição de chaves,
+            criação de tabelas e consultas SQL com filtros, ordenação, junções e agregação.
+          </div>
+
+          <div class="sql-step"><span class="sql-step-number">01</span><h3>Modelagem conceitual de um sistema industrial</h3></div>
+          <p>
+            O primeiro cenário apresenta uma indústria que precisa relacionar informações de
+            <strong>departamentos, funcionários, projetos, peças, depósitos e fornecedores</strong>.
+            A partir das regras de negócio, desenvolvi um Modelo Entidade-Relacionamento (MER),
+            representando entidades, atributos, cardinalidades e relacionamentos.
+          </p>
+          <div class="sql-info-grid">
+            <div class="sql-info"><strong>Entidades e atributos</strong><p>Identificação das informações necessárias ao processo industrial.</p></div>
+            <div class="sql-info"><strong>Relacionamentos</strong><p>Associações entre funcionários, projetos, peças, fornecedores e depósitos.</p></div>
+            <div class="sql-info"><strong>Cardinalidades</strong><p>Representação de vínculos um-para-muitos e muitos-para-muitos.</p></div>
+            <div class="sql-info"><strong>Regras de negócio</strong><p>Controle de participantes dos projetos, utilização de peças e fornecedores.</p></div>
+          </div>
+          <figure class="sql-figure mer">
+            <img src="../assets/sql-mer-industrial.webp" alt="Modelo Entidade-Relacionamento do estudo de sistema corporativo industrial" loading="lazy" />
+            <figcaption>MER elaborado na primeira etapa acadêmica: sistema corporativo industrial.</figcaption>
+          </figure>
+
+          <div class="sql-step"><span class="sql-step-number">02</span><h3>Implementação do banco de ordens de serviço</h3></div>
+          <p>
+            A segunda etapa utiliza <strong>outro cenário</strong>: uma empresa que administra
+            clientes, técnicos, serviços prestados e ordens de serviço. Com base no modelo
+            relacional fornecido na atividade, implementei no MySQL o banco <code>Empresa</code>,
+            com as tabelas e seus relacionamentos.
+          </p>
+          <div class="sql-tech-note">
+            <strong>Tabelas implementadas:</strong> <code>Cliente</code>, <code>Tecnico</code>,
+            <code>Servico</code>, <code>Finalizacao</code>, <code>OrdemServico</code>
+            e <code>OrdemServico_Servico</code>.
+            Foram utilizadas chaves primárias, chaves estrangeiras e restrições <code>NOT NULL</code>
+            conforme os requisitos da atividade.
+          </div>
+          <figure class="sql-figure model">
+            <img src="../assets/sql-modelo-ordens-servico.webp" alt="Modelo relacional de ordens de serviço com clientes, técnicos, serviços e finalização" loading="lazy" />
+            <figcaption>Modelo relacional disponibilizado no exercício e utilizado como base para implementar as tabelas.</figcaption>
+          </figure>
+
+          <div class="sql-step"><span class="sql-step-number">03</span><h3>Consultas SQL e resultados</h3></div>
+          <p>
+            Além da estrutura do banco, executei consultas no MySQL Workbench para responder
+            perguntas do negócio. Abaixo estão exemplos do código apresentado no trabalho,
+            acompanhados de evidências de execução.
+          </p>
+
+          <h3>Contagem de serviços cadastrados</h3>
+          <p>Uma consulta agregada para identificar a quantidade total de serviços.</p>
+          <pre class="sql-code"><code>SELECT COUNT(*) AS total_servicos
+FROM Servico;</code></pre>
+          <figure class="sql-figure">
+            <img src="../assets/sql-contagem-servicos.webp" alt="Consulta SELECT COUNT no MySQL Workbench com resultado" loading="lazy" />
+            <figcaption>Consulta com COUNT(*) executada no MySQL Workbench.</figcaption>
+          </figure>
+
+          <h3>Junção de tabelas com JOIN</h3>
+          <p>
+            Relacionamento entre as ordens de serviço e os serviços executados para obter
+            a descrição, quantidade, valor unitário e subtotal de cada item.
+          </p>
+          <pre class="sql-code"><code>SELECT
+    oss.idOrdem,
+    s.descricao,
+    oss.quantidade,
+    oss.valorUnitario,
+    (oss.quantidade * oss.valorUnitario) AS subtotal
+FROM OrdemServico_Servico oss
+JOIN Servico s ON oss.idServico = s.idServico
+ORDER BY oss.idOrdem ASC;</code></pre>
+          <figure class="sql-figure">
+            <img src="../assets/sql-join-ordens-servico.webp" alt="Consulta JOIN no MySQL Workbench listando serviços e subtotais por ordem" loading="lazy" />
+            <figcaption>Consulta JOIN e tabela de resultados apresentada na atividade prática.</figcaption>
+          </figure>
+
+          <h3>Totais por ordem de serviço com GROUP BY</h3>
+          <p>
+            Agrupamento de itens por ordem, somando os subtotais para identificar o valor
+            total de cada ordem de serviço e ordenar os resultados por valor decrescente.
+          </p>
+          <pre class="sql-code"><code>SELECT
+    idOrdem,
+    SUM(quantidade * valorUnitario) AS valorTotal
+FROM OrdemServico_Servico
+GROUP BY idOrdem
+ORDER BY valorTotal DESC;</code></pre>
+          <figure class="sql-figure">
+            <img src="../assets/sql-group-by-ordens.webp" alt="Consulta GROUP BY com SUM e ORDER BY no MySQL Workbench" loading="lazy" />
+            <figcaption>Consulta com SUM, GROUP BY e ORDER BY, acompanhada dos resultados de execução.</figcaption>
+          </figure>
+
+          <h3>Filtro e ordenação</h3>
+          <p>
+            Outra consulta desenvolvida permite identificar apenas ordens de serviço abertas,
+            organizadas cronologicamente.
+          </p>
+          <pre class="sql-code"><code>SELECT dataAbertura, equipamento, prioridade
+FROM OrdemServico
+WHERE estado = 'Aberta'
+ORDER BY dataAbertura ASC;</code></pre>
+
+          <h3>O que este projeto demonstra</h3>
+          <ul>
+            <li>Interpretação de requisitos e regras de negócio para modelagem de dados.</li>
+            <li>Criação de banco e tabelas relacionais usando <code>CREATE DATABASE</code> e <code>CREATE TABLE</code>.</li>
+            <li>Aplicação de <code>PRIMARY KEY</code>, <code>FOREIGN KEY</code> e restrições de campos.</li>
+            <li>Uso de consultas <code>SELECT</code>, <code>COUNT</code>, <code>WHERE</code>, <code>ORDER BY</code>, <code>JOIN</code>, <code>SUM</code> e <code>GROUP BY</code>.</li>
+            <li>Organização de consultas para obtenção de informações úteis à gestão.</li>
+          </ul>
+
+          <h3>Possibilidades de evolução</h3>
+          <p>
+            Este estudo pode ser expandido futuramente para incluir dados simulados mais
+            completos, consultas analíticas adicionais, <code>VIEW</code>s e integração com
+            um dashboard do Power BI. Essas extensões <strong>ainda não fazem parte do trabalho apresentado</strong>.
+          </p>
+          <div class="case-actions">
+            <a class="btn primary" href="../index.html#projetos">Ver outros projetos</a>
+            <a class="btn secondary" href="https://github.com/thiagominacio" target="_blank" rel="noreferrer">Visitar meu GitHub</a>
+          </div>
+        </article>
+
+        <aside class="case-sidebar">
+          <h3>Resumo do projeto</h3>
+          <dl>
+            <dt>Categoria</dt><dd>Projeto acadêmico</dd>
+            <dt>Curso</dt><dd>Análise e Desenvolvimento de Sistemas</dd>
+            <dt>Instituição</dt><dd>UNINTER</dd>
+            <dt>Disciplina</dt><dd>Banco de Dados Relacional</dd>
+            <dt>Status</dt><dd>Atividade concluída</dd>
+            <dt>Tecnologia</dt><dd>SQL e MySQL</dd>
+            <dt>Ferramenta</dt><dd>MySQL Workbench</dd>
+            <dt>Entregas</dt><dd>MER, tabelas e consultas SQL</dd>
+            <dt>Tipo de experiência</dt><dd>Estudo acadêmico com exemplos fictícios</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-content">
+    <span>© <span id="year"></span> Thiago Moura Inácio</span>
+    <span>Projeto acadêmico · Banco de Dados e SQL</span>
+  </div></footer>
+  <script src="../script.js"></script>
+</body>
+</html>
