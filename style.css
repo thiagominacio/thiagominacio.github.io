@@ -475,3 +475,42 @@ footer { background:var(--bg); color:#c7d0de; padding:28px 0; }
 .inventory-aside-foot p{font-size:.84rem;margin:8px 0 0;}
 @media(max-width:850px){.inventory-model-main{grid-template-columns:1fr;}.inventory-model-center{flex-direction:row;justify-content:center;}.inventory-model-center .inventory-table{width:auto;min-width:50%;}.inventory-evidence-grid{grid-template-columns:1fr;}}
 @media(max-width:520px){.inventory-sample-row{grid-template-columns:1fr;gap:4px;}.inventory-model-main{padding:14px;}.inventory-model-center .inventory-table{min-width:70%;}}
+
+
+/* V7: detalhes de cases de Power Platform e IA */
+.case-v7 .case-hero { padding: 80px 0 68px; }
+.case-v7 .case-hero h1 { font-size: clamp(2.65rem, 5.8vw, 4.3rem); }
+.case-v7 .case-hero p { line-height:1.8; }
+.case-v7 .case-layout { display:grid; grid-template-columns:minmax(0,1.8fr) minmax(250px,.8fr); gap:42px; }
+.case-v7 .case-main { min-width:0; }
+.case-v7 .case-main h2 { font-size:clamp(1.75rem,3.1vw,2.4rem); margin: 13px 0 15px; }
+.case-v7 .case-main p { color:#5b6474; line-height:1.85; }
+.case-v7 .case-main section { margin:0 0 56px; scroll-margin-top:100px; }
+.case-v7 .case-main ul { line-height:1.85; color:#525f72; padding-left:23px; }
+.case-v7 .case-main li { margin-bottom:9px; }
+.case-v7 .case-sidenav { position:sticky; top:95px; align-self:start; border:1px solid var(--line);border-radius:20px;padding:25px;background:#fff;box-shadow:0 12px 25px rgba(15,23,42,.04); }
+.case-v7 .case-sidenav h3 { font-size:1.13rem; }
+.case-v7 .case-sidenav dt { color:#66768c; text-transform:uppercase; font-weight:800; font-size:.7rem;letter-spacing:.1em;margin-top:18px; }
+.case-v7 .case-sidenav dd { margin:3px 0 0; font-size:.93rem; line-height:1.7; }
+.case-v7 .case-badge { display:inline-flex; padding:6px 12px; border-radius:999px; border:1px solid rgba(147,197,253,.37);background:rgba(37,99,235,.12); font-weight:700; font-size:.8rem; color:#cfe4ff; margin-right:8px;margin-bottom:8px; }
+.case-v7 .case-note { border-left:4px solid #4778d5;background:#f4f7ff;padding:23px 25px;border-radius:0 15px 15px 0;color:#24436e;line-height:1.8;margin:24px 0; }
+.case-v7 .case-note.warning { border-left-color:#a87228; background:#fffaf0;color:#62481c; }
+.case-v7 .case-note strong { display:block;color:inherit;margin-bottom:6px; }
+.case-v7 .case-diagram { background:#0e1729;border-radius:22px;padding:27px 24px;margin:30px 0;color:#e3efff;overflow-x:auto; }
+.case-v7 .case-diagram h3 { color:#fff; font-size:1.12rem; margin:0 0 10px; }
+.case-v7 .case-diagram p {color:#aabbd2;font-size:.84rem;margin:0 0 22px;}
+.case-v7 .case-flow { display:flex;justify-content:space-between;align-items:stretch;gap:8px; }
+.case-v7 .case-flow-step { flex:1;min-width:110px;border:1px solid #334560;border-radius:14px;background:#1a2840;padding:18px 10px;display:flex;flex-direction:column;gap:8px;text-align:center;justify-content:center; }
+.case-v7 .case-flow-step b { color:white;font-size:.89rem; }
+.case-v7 .case-flow-step span { color:#b4c6de;font-size:.74rem;line-height:1.45; }
+.case-v7 .case-arrow { align-self:center;color:#83bcff;font-weight:800; }
+.case-v7 .case-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:22px 0;}
+.case-v7 .case-grid-item {background:#f7f9fc;padding:20px;border:1px solid #e1e8f1;border-radius:16px;}
+.case-v7 .case-grid-item strong {display:block;font-size:.97rem; margin-bottom:6px;}
+.case-v7 .case-grid-item p {font-size:.88rem;line-height:1.65;margin:0;}
+.case-v7 .case-grid-item small {color:#6b7b91;display:block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.case-v7 .case-links {display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+.case-v7 .case-links .btn.secondary{color:#1f3557;border-color:#d3dce8;background:#fff;}
+.case-v7 .case-footer-micro {color:#69798b;font-size:.84rem;margin-top:14px;}
+@media(max-width:930px){.case-v7 .case-layout{grid-template-columns:1fr;}.case-v7 .case-sidenav{position:static;}}
+@media(max-width:710px){.case-v7 .case-flow{flex-direction:column;}.case-v7 .case-arrow{transform:rotate(90deg);}.case-v7 .case-grid{grid-template-columns:1fr;}.case-v7 .case-hero{padding:62px 0 45px;}}
