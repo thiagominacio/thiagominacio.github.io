@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Projeto acadêmico Cofrinho Multimoedas em Java com código-fonte e execução comprovada."><title>Cofrinho Multimoedas — Java | Thiago Moura Inácio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css"></head>
+<body><header class="topbar"><div class="container nav"><a class="brand" href="../index.html">Thiago Moura Inácio</a>
+<nav><a href="../index.html#sobre">Sobre</a><a href="../index.html#atuacao">Atuação</a><a href="../index.html#projetos">Projetos</a><a href="../index.html#contato">Contato</a></nav></div></header>
+<main><section class="case-hero proof-hero"><div class="container"><a class="case-breadcrumb" href="../index.html#projetos">← Voltar aos projetos</a>
+<span class="eyebrow">PROJETO ACADÊMICO · DESENVOLVIMENTO</span><h1>Cofrinho Multimoedas — Java</h1><p class="case-subtitle">Aplicação de console utilizando abstração, herança, polimorfismo e coleções em Java.</p>
+<div class="case-meta"><span>Java</span><span>POO</span><span>Herança</span><span>Polimorfismo</span><span>ArrayList</span></div></div></section><section class="section"><div class="container case-grid proof-layout">
+<article class="case-content proof-main">
+<span class="eyebrow">O PROJETO</span>
+<h2>Programação orientada a objetos aplicada a moedas.</h2>
+<p>Aplicação de console em Java para adicionar, remover e listar moedas em Real, Dólar e Euro e calcular um total convertido para reais. O exercício foi construído com classes, herança, encapsulamento, polimorfismo e uma lista de objetos.</p>
+<div class="proof-summary"><strong>Código real disponível:</strong> seis classes Java originais do projeto, com um pacote para baixar e testar localmente.</div>
+<div class="proof-actions"><a class="btn primary" href="../assets/cofrinho-java-codigo.zip" download>Baixar código-fonte Java</a></div>
+<h3>Evidência 1 · Trechos reais do código</h3>
+<p>A classe abstrata define o contrato de conversão. A classe <code>Cofrinho</code> percorre os objetos e usa o método sobrescrito <code>converter()</code> de cada moeda.</p>
+<pre class="proof-code"><code>package principal;
+
+// Classe abstrata que representa uma moeda genérica
+public abstract class Moeda {
+
+    // Encapsulamento: atributo privado
+    private double valor;
+
+    // Construtor que recebe o valor da moeda
+    public Moeda(double valor) {
+        this.valor = valor;
+    }
+
+    // Getter para permitir acesso controlado ao valor
+    public double getValor() {
+        return this.valor;
+    }
+
+    // Método abstrato para exibir informações da moeda
+    public abstract void info();
+
+    // Método abstrato para converter a moeda para Real (R$)
+    public abstract double converter();
+}</code></pre><pre class="proof-code"><code>    public double totalConvertido() {
+        double total = 0;
+        for (Moeda m : listaMoedas) {
+            // Polimorfismo: cada tipo converte do seu jeito
+            total += m.converter();
+        }
+        return total;
+    }</code></pre>
+<h3>Evidência 2 · Código compilado e executado</h3>
+<p>Compilei as seis classes com <code>javac</code> e executei o menu interativo usando valores de teste. A aplicação listou as moedas, calculou o total, removeu uma moeda e recalculou o resultado.</p>
+<div class="proof-terminal"><div class="proof-terminal-title">Saída real da execução local do programa</div><pre>Moedas no cofrinho:
+Real - R$ 2.0
+Dólar - US$ 3.0
+Euro - € 1.0
+
+Total no cofrinho convertido para Real: R$ 25.3
+
+Moeda removida com sucesso!
+Total no cofrinho convertido para Real: R$ 23.3</pre></div>
+<p class="proof-small">O exemplo utiliza as cotações fixas didáticas do código (Dólar = 5,70 e Euro = 6,20), <strong>não</strong> taxas de câmbio atuais. O projeto demonstra fundamentos acadêmicos, não um conversor financeiro para produção.</p>
+<h3>O que este projeto demonstra</h3>
+<ul class="proof-list"><li>Java: classes, objetos, construtores e acesso encapsulado.</li><li>Herança e classes abstratas.</li><li>Polimorfismo na conversão de moedas.</li><li>Operações com <code>ArrayList</code> e interface de console.</li></ul>
+</article><aside class="case-sidebar proof-side"><h3>Ficha do projeto</h3><dl>
+<dt>Tipo</dt><dd>Projeto acadêmico</dd><dt>Status</dt><dd>Código testado localmente</dd>
+<dt>Área</dt><dd>Java · POO · Console</dd><dt>Arquivos</dt><dd>Moeda, Real, Dolar, Euro, Cofrinho e Principal</dd>
+<dt>Execução</dt><dd>JDK / javac</dd></dl><div class="proof-side-note">Os códigos-fonte originais estão disponíveis no ZIP, sem binários e sem dados pessoais.</div></aside></div></section></main>
+<footer><div class="container footer-content"><span>© <span id="year"></span> Thiago Moura Inácio</span><span>Portfólio profissional</span></div></footer>
+<script src="../script.js"></script></body></html>
